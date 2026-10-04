@@ -2,7 +2,6 @@
 
 This is my review of the current homepage, written for the technical exercise. I looked at it on a desktop screen and in a narrow browser window (about 490px wide, to stand in for a phone). I did not add or change any content. The work is about presenting the existing content better.
 
-
 ## 1. Assessment
 
 **Content organization.** The order is right: vision, focus areas, a call for applications, then partners. The problem is the framing. Every block is a white card inside a grey panel inside the white page, so there are boxes inside boxes and nothing stands out. "Our Partners:" is plain body text instead of a heading like the other sections. On desktop the Canada logo drops onto a row of its own, and the IDRC subtitle is cut off.
@@ -53,4 +52,8 @@ Every word comes from the existing site. I invented no projects, partners, achie
 The exercise is limited to about four hours, so I kept to the homepage:
 - **The inner pages** (Team, Research, Publications) are not redesigned.
 - **The logos are low-resolution crops** from the live site. The lab's original files should replace them.
-- **No automated tests,** and the audit above should be filled in with real results.
+- **No automated tests.** I checked the layout by eye on a desktop screen and in a narrow window. I did not run an automated accessibility audit, which is why contrast is marked above as not measured.
+
+## 6. How I worked
+
+The design decisions in this document are mine. I made them from a UX/UI point of view and from my previous experience. I used Claude, an AI assistant, to implement those decisions in code and to help organize them into these documents.

@@ -83,7 +83,8 @@ Approximately `[X]` hours. `[add a short breakdown, e.g. review and planning, im
 **Tools:** Claude (Anthropic), used in a chat interface. `[add any other tools, such as an editor assistant, if you used them]`
 
 **How I used it**
-- To draft and revise React and Tailwind components from my brief and my existing files, for layout, accessibility patterns and responsive behavior.
+- The design decisions are mine. I made them from a UX/UI point of view and from my previous experience.
+- I used Claude to implement those decisions in React and Tailwind, and to help organize them in the documents.
 - To write the first versions of the assessment and this README, which I then edited.
 
 **How I checked the output**
