@@ -2,7 +2,6 @@
 
 This is my review of the current homepage, written for the technical exercise. I looked at it on a desktop screen and in a narrow browser window (about 490px wide, to stand in for a phone). I did not add or change any content. The work is about presenting the existing content better.
 
-`[add the audit you actually ran, e.g. Lighthouse / axe results and a keyboard-only pass, with the numbers]`
 
 ## 1. Assessment
 
@@ -34,11 +33,12 @@ This is my review of the current homepage, written for the technical exercise. I
 ## 3. What the prototype implements
 
 - **No scrolling windows.** Vision, Focus Areas and Join are normal sections on every screen size. (Priority 1)
-- **"Apply Now" in the hero,** next to the title, and again in the Join section at the bottom. (Priority 2)
-- **One navigation bar.** At the top it has exactly the same width as the page content, so the layout lines up. Once you scroll, it stretches to the full screen width and stays pinned. I kept it contained at first on purpose: it looks simpler and I can control how it sits on the page. (Priority 3)
+- **"Apply Now" in the hero,** next to the title, and again in the Join section at the bottom. A visitor who does not want to scroll to the end can act straight from the first screen, and the bottom button is there for those who read the whole page. (Priority 2)
+- **One navigation bar.** At the top it has exactly the same width as the page content, so the layout lines up. Once you scroll, it stretches to the full screen width and stays pinned. I kept it contained at first on purpose. The first look creates the impression of the whole site, and a bar that matches the layout of the content feels orderly, simple and attractive, so it also gives me better control over how the page looks. (Priority 3)
 - **A phone menu that does not cover the page.** It opens as a small light green card just under the bar, only as tall as its links, with no dark overlay, so the content and its dividing lines stay visible. (Priority 3)
 - **The hero wraps at word boundaries.** (Priority 4)
 - **A very light green hero.** The brand is green, but using dark green everywhere is redundant and tiring. A light green with thin rings gives a clean, slightly technical feel, and the dark bar and the Join card become the only strong color blocks. (Priority 5)
+- **Rings that spread outward from "AI4D".** The circles express the idea behind the name: knowledge spreads from the AI4D Lab to everyone else. The four dots are the four focus areas, in the same colors as their cards. It is decoration only: it adds no facts or claims, it is hidden from screen readers, and the motion stops for people who prefer reduced motion. (Priority 5)
 - **Lines instead of boxes in Our Vision.** Thin dividers separate the three pillars. This looks more professional, avoids boxes everywhere, and scales: a fourth pillar is just one more row. (Priority 5)
 - **Skip link, one `h1`, labelled sections, visible focus rings, and no motion for people who prefer reduced motion.** (Priority 6)
 - **Partners in cards of the same size with a clear border,** so each logo reads as its own item. I considered an auto-scrolling strip, but with only three partners it adds motion for nothing. The grid adapts to the number of partners, so adding one is a single entry in `content.js`. (Priority 7)
