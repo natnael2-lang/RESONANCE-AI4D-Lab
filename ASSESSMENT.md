@@ -1,42 +1,56 @@
-# Website Assessment: RESONANCE AI4D Lab (homepage)
+# RESONANCE AI4D Lab homepage: assessment and priorities
 
-Based on the live site (https://sites.google.com/aait.edu.et/resonance-lab/home), desktop screenshots, and a fetch of its navigation structure. Items marked *(verify)* should be confirmed on a real phone and with an accessibility checker before being treated as fact.
+This is my review of the current homepage, written for the technical exercise. I looked at it on a desktop screen and in a narrow browser window (about 490px wide, to stand in for a phone). I did not add or change any content. The work is about presenting the existing content better.
 
-## Site constraints worth knowing
-The current site is a Google Site: the navigation, search and layout are template-controlled, which limits how far it can be improved in place. This prototype shows what a purpose-built front end could do; migrating would be a separate decision for the lab.
+`[add the audit you actually ran, e.g. Lighthouse / axe results and a keyboard-only pass, with the numbers]`
 
-## What works
-- Clear green identity, consistent with the lab's brand.
-- Vision and focus areas are short, scannable and well chunked into cards.
-- A prominent call to action for MSc/PhD applications.
-- Partner logos are present, which builds credibility.
+## 1. Assessment
 
-## Findings
+**Content organization.** The order is right: vision, focus areas, a call for applications, then partners. The problem is the framing. Every block is a white card inside a grey panel inside the white page, so there are boxes inside boxes and nothing stands out. "Our Partners:" is plain body text instead of a heading like the other sections. On desktop the Canada logo drops onto a row of its own, and the IDRC subtitle is cut off.
 
-| Area | Observation |
-|---|---|
-| Content organization | The homepage never states in one plain sentence what the lab is. The vision text is the first content, and the "Our Partners" label is small, unstyled text. The CTA is the last substantive block, so applicants must scroll. |
-| Navigation | Two navigation systems appear at once: a top dropdown menu and a row of green buttons repeating the same items. "Contact" appears only in the dropdown. "Get Involved" has a sub-menu that is not discoverable. |
-| Visual design | Hero text sits in a bordered box over a busy gradient. The "Apply Now" button uses default blue link styling that clashes with the green palette. Emoji icons render differently across platforms. |
-| Mobile responsiveness | *(verify)* Google Sites stacks content, but the hero box, button row and cards were designed at desktop width. |
-| Accessibility | The CTA appears to be an embedded frame with its own scrollbar, which creates a scroll trap and a keyboard/screen-reader hazard. White text on the light-green end of the CTA gradient likely has low contrast *(measure)*. Focus-area cards are not links. Emoji are decorative but may be read aloud. Partner logos need alt text *(verify)*. The Canada logo is cropped. |
-| Clarity | The Innovation Hub text and the lab's overall mission are the same idea repeated. Focus-area cards give a title only, with no link to detail. |
-| Content freshness | The Get Involved sub-page is labelled "Application 2025/26". Confirm with the lab whether this is the current cycle; if not, the homepage CTA ("applications now open") could mislead applicants. |
-| Overall UX | Visitors have no direct path from a focus area to the research page, and no visible contact route. |
+**Navigation.** Two menus do the same job. The "Home" dropdown lists every page, including Contact. A separate row of six big buttons repeats most of them, without Contact. On a phone, those buttons wrap into two uneven rows, and the menu opens as a dark panel with a dark overlay over the page.
 
-## Prioritized recommendations
-1. **Remove the embedded CTA frame** and make it a native section with a real link. (Accessibility, conversion.)
-2. **One clear navigation**: a single header nav (with a mobile menu), include Contact, drop the duplicate button row.
-3. **Fix contrast** on the CTA and any light-on-light text; keep a visible focus style. (Accessibility.)
-4. **Lead with purpose and action**: state the lab's mission in the hero and put the apply action up front.
-5. **Make focus areas links** to the Research page.
-6. **Give partners a proper section** with heading, consistent logo sizing, alt text and uncropped logos.
-7. **Add a footer** with contact details and affiliation.
-8. **Mobile-first, semantic layout** (landmarks, heading order, skip link).
+**Visual design.** The same heavy dark green appears in the banner, the buttons and the bar. When you scroll, the bar turns near-black, which is not one of the lab's colors. Emoji act as icons, the body text is small and light grey, and "Apply Now" uses the default link blue on a white button over a green panel.
 
-9. **Search that covers the whole site** (pages, focus areas, applications), reachable from a visible header control and the `/` key.
-10. **A scalable navigation**: tabs, focus areas and partners come from one data file, so adding a new tab or area does not require redesigning the page; extra tabs fall into a "More" menu.
-11. **Purposeful motion**: reveal-on-scroll and a resonance motif guide attention to the vision, focus areas and the apply action, and switch off for users who prefer reduced motion.
+**Mobile responsiveness.** This is where the site struggles most. The hero title breaks inside a word ("RESONAN / CE"). Our Vision, Key Focus Areas and Ready to Join each sit in their own small scrolling window with a scrollbar, so you see a heading and a sliver of content and have to scroll inside the page to read it. On desktop the same happens in the Join block.
 
-## Out of scope for this prototype
-Inner pages (Research, Team, Publications, News), content writing, CMS migration, search.
+**Accessibility.** From what is visible: nested scrolling areas are hard to use with a keyboard or a screen reader, I did not see a skip link, and the small grey text may not have enough contrast. I have not measured contrast ratios.
+
+**Clarity.** The wording is clear and I kept all of it. What is unclear is what the visitor should do. The lab is recruiting (MSc and PhD applications are open), but the only way to apply is a button in a nested frame at the bottom of the page, and the first screen has no action at all.
+
+**Overall user experience.** The site has the right content in the right order, but visitors have to fight the layout to use it: two menus, scrolling windows inside a scrolling page, and the main action buried. Fixing structure will help more than adding anything.
+
+## 2. Priorities
+
+1. **Remove the nested scrolling.** Every section becomes part of the page. It is the most visible problem on a phone and the most unnecessary, because the content is short.
+2. **Put the main action up front.** Applying is the main reason to come to this site right now, so "Apply Now" belongs in the first screen, not only at the bottom.
+3. **One navigation that works on desktop and phone.**
+4. **Fix the mobile hero title.**
+5. **A calmer color scheme.** Dark green everywhere is repetitive and heavy, even though it is the brand color.
+6. **Basic accessibility:** skip link, a single `h1`, labelled sections, visible focus, reduced motion.
+7. **Partners with clear boundaries.**
+8. **Content in one place,** so adding a tab or a partner later does not mean editing the layout.
+
+## 3. What the prototype implements
+
+- **No scrolling windows.** Vision, Focus Areas and Join are normal sections on every screen size. (Priority 1)
+- **"Apply Now" in the hero,** next to the title, and again in the Join section at the bottom. (Priority 2)
+- **One navigation bar.** At the top it has exactly the same width as the page content, so the layout lines up. Once you scroll, it stretches to the full screen width and stays pinned. I kept it contained at first on purpose: it looks simpler and I can control how it sits on the page. (Priority 3)
+- **A phone menu that does not cover the page.** It opens as a small light green card just under the bar, only as tall as its links, with no dark overlay, so the content and its dividing lines stay visible. (Priority 3)
+- **The hero wraps at word boundaries.** (Priority 4)
+- **A very light green hero.** The brand is green, but using dark green everywhere is redundant and tiring. A light green with thin rings gives a clean, slightly technical feel, and the dark bar and the Join card become the only strong color blocks. (Priority 5)
+- **Lines instead of boxes in Our Vision.** Thin dividers separate the three pillars. This looks more professional, avoids boxes everywhere, and scales: a fourth pillar is just one more row. (Priority 5)
+- **Skip link, one `h1`, labelled sections, visible focus rings, and no motion for people who prefer reduced motion.** (Priority 6)
+- **Partners in cards of the same size with a clear border,** so each logo reads as its own item. I considered an auto-scrolling strip, but with only three partners it adds motion for nothing. The grid adapts to the number of partners, so adding one is a single entry in `content.js`. (Priority 7)
+- **All content in one file** that the navbar, menu, search, cards and footer read from. (Priority 8)
+
+## 4. Academic identity and existing content
+
+Every word comes from the existing site. I invented no projects, partners, achievements or team members. The hero reuses the lab's first vision statement, and the three partners are the ones already on the site. The IDRC image already includes the Canada wordmark, so there are three cards. Navigation links still open the existing Google Sites pages. The serif headings and the greens come from the lab's seal and wordmark.
+
+## 5. What I left out, and why
+
+The exercise is limited to about four hours, so I kept to the homepage:
+- **The inner pages** (Team, Research, Publications) are not redesigned.
+- **The logos are low-resolution crops** from the live site. The lab's original files should replace them.
+- **No automated tests,** and the audit above should be filled in with real results.

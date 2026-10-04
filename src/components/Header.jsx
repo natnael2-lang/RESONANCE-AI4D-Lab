@@ -134,13 +134,13 @@ export default function Header({ onSearch }) {
             </button>
             <button
               type="button"
-              onClick={() => setOpen(true)}
+              onClick={() => setOpen((o) => !o)}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10 xl:hidden"
-              aria-label="Open menu"
+              aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}
               aria-controls="mobile-menu"
             >
-              <Icon name="menu" className="h-6 w-6" />
+              <Icon name={open ? 'close' : 'menu'} className="h-6 w-6" />
             </button>
           </div>
         </div>
@@ -156,30 +156,19 @@ export default function Header({ onSearch }) {
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-50 xl:hidden" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu">
-          <button type="button" className="absolute inset-0 bg-brand-950/70" aria-label="Close menu" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-0 flex h-full w-[min(22rem,90vw)] flex-col bg-brand-900 text-white shadow-lift">
-            <div className="flex h-16 items-center justify-end px-4">
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10"
-                aria-label="Close menu"
-                autoFocus
-              >
-                <Icon name="close" className="h-6 w-6" />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-30 xl:hidden" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu">
+          <button type="button" className="absolute inset-0 bg-brand-950/25" aria-label="Close menu" onClick={() => setOpen(false)} />
+          <div className="absolute right-3 top-[5.5rem] flex max-h-[calc(100%-6.5rem)] w-[min(20rem,calc(100%-1.5rem))] flex-col overflow-hidden rounded-2xl bg-green-50 text-brand-900 shadow-lift">
 
-            <nav aria-label="Primary" className="flex-1 overflow-y-auto px-3 pb-8">
+            <nav aria-label="Primary" className="flex-1 overflow-y-auto px-3 py-2">
               <ul>
                 {nav.map((item) => (
-                  <li key={item.id} className="border-b border-white/10 last:border-0">
-                    <a href={item.href} className="block rounded-lg px-3 py-4 text-lg font-medium hover:bg-white/10">
+                  <li key={item.id} className="border-b border-brand-900/10 last:border-0">
+                    <a href={item.href} className="block rounded-lg px-3 py-4 text-lg font-medium hover:bg-green-100">
                       {item.label}
                     </a>
                     {item.children?.map((c) => (
-                      <a key={c.href} href={c.href} className="mb-2 block rounded-lg py-2 pl-8 pr-3 text-base text-white/75 hover:bg-white/10">
+                      <a key={c.href} href={c.href} className="mb-2 block rounded-lg py-2 pl-8 pr-3 text-base text-slate-600 hover:bg-green-100">
                         {c.label}
                       </a>
                     ))}
