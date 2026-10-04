@@ -54,7 +54,7 @@ All visible content lives in one file: `src/data/content.js`. To add a navbar ta
 
 **Partners.** Each logo sits in a card of the same size with a clear border. The grid adapts to the number of partners, so adding one is a single entry in `content.js`. I considered an auto-scrolling strip but, with only three partners, it would add motion for no benefit. The IDRC logo file already includes the Canada wordmark, so there are three cards.
 
-**Accessibility.** A skip link, a single `h1`, sections labelled by their headings, visible focus rings, `aria-hidden` on decorative graphics, and every animation turned off for visitors who prefer reduced motion. Text colors were chosen for readable contrast. `[replace with your measured results from Lighthouse / axe]`
+**Accessibility.** A skip link, a single `h1`, sections labelled by their headings, visible focus rings, `aria-hidden` on decorative graphics, and every animation turned off for visitors who prefer reduced motion. Text colors were chosen for readable contrast. 
 
 **Motion kept small.** One entrance sequence in the hero, a slow pulse on the decorative rings, and fade-in on scroll. These are plain CSS plus `IntersectionObserver`, with no animation library.
 
@@ -66,7 +66,7 @@ All visible content lives in one file: `src/data/content.js`. To add a navbar ta
 
 - Homepage only. Navigation links open the existing Google Sites pages. The other pages could reuse the same navbar, footer and `.page` container, with their content added to `content.js`.
 - Logos are low-resolution crops from the live site. The original files should replace them.
-- No automated tests. I checked the site manually. `[add exactly what you checked and the results, e.g. Lighthouse scores, a keyboard-only pass, a ~490px window]`
+- No automated tests. I checked the site manually. 
 - The desktop dropdown does not close with Escape and uses simplified ARIA. The mobile menu and the search dialog do not fully trap keyboard focus.
 - The hero repeats the first vision statement, which then appears again in the Vision section. I chose to reuse existing wording instead of writing a new tagline.
 - The footer repeats the navbar links. Because the navbar stays pinned, they add little, but I kept them as a conventional end to the page.
@@ -76,11 +76,11 @@ All visible content lives in one file: `src/data/content.js`. To add a navbar ta
 
 ## Time spent
 
-Approximately `[X]` hours. `[add a short breakdown, e.g. review and planning, implementation, polishing, documentation]`
+Approximately 5 hours.
 
 ## AI and development-tool disclosure
 
-**Tools:** Claude (Anthropic), used in a chat interface. `[add any other tools, such as an editor assistant, if you used them]`
+**Tools:** Claude (Anthropic), used in a chat interface.I used UI/UX Design motivation  sites include Dribbble,Figma Community,Mobbin
 
 **How I used it**
 - The design decisions are mine. I made them from a UX/UI point of view and from my previous experience.
@@ -88,11 +88,11 @@ Approximately `[X]` hours. `[add a short breakdown, e.g. review and planning, im
 - To write the first versions of the assessment and this README, which I then edited.
 
 **How I checked the output**
-- I ran the project locally and reviewed it in the browser at desktop width and in a narrow window (about 490px), comparing it with screenshots of the current site. `[add other checks you really did: keyboard navigation, Lighthouse/axe]`
+- I ran the project locally and reviewed it in the browser at desktop width and in a narrow window (about 490px), comparing it with screenshots of the current site.
 - I sent back screenshots and concrete feedback, and the code was revised until it matched my judgment.
 
 **Where an idea came from**
-- The circles motif was already in the code I started this chat with. `[state honestly where it came from: your own idea, an earlier AI tool, or a template]` I kept it because it fits the name and the focus areas.
+- I Use the concentric circle with spreeding wave was to indicate the idea of ai from the ai4dlab to other spreed
 
 **Suggestions I rejected or changed**
 - A dark full-width hero: replaced with a very light hero that does not fill the page.
